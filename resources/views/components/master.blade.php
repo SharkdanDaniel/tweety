@@ -24,12 +24,15 @@
         <section class="px-8 py-4 mb-6">
             <header class="container mx-auto">
                 <h1>
-                    <img
-                        width="70"
-                        height="70"
-                        src="/images/logo.png"
-                        alt="Tweety"
-                    >
+                    <a href="/tweets">
+                        <img
+
+                            width="70"
+                            height="70"
+                            src="/images/logo.png"
+                            alt="Tweety"
+                        >
+                    </a>
                 </h1>
             </header>
         </section>
