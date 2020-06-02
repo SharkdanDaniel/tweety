@@ -8,13 +8,15 @@
                 class="mb-2 rounded-lg"
             >
 
-            <img
-                src="{{ $user->avatar }}"
-                alt=""
-                class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
-                style="left: 50%"
-                width="150"
-            >
+            <a onclick="in" href="">
+                <img
+                    src="{{ $user->avatar }}"
+                    alt=""
+                    class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+                    style="left: 50%"
+                    width="150"
+                >
+            </a>
         </div>
 
         <div class="flex justify-between items-center mb-6">
@@ -37,9 +39,13 @@
             </div>
         </div>
 
+        <div class="font-bold">
+            About me
+        </div>
         <p class="text-sm">
             I like going out to bars, restaurants and other few things. Let's get along. You're welcome to follow me and sending me messages if you want.
         </p>
+
 
     </header>
 

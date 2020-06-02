@@ -15,7 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = ['username', 'avatar', 'name', 'email', 'password'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,7 +37,7 @@ class User extends Authenticatable
 
     public function getAvatarAttribute($value)
     {
-        return asset($value ?: '/images/avatar.jpeg');
+        return asset($value ? 'storage/' . $value : 'images/avatar.jpeg');
     }
 
     public function setPasswordAttribute($value)
@@ -51,7 +51,7 @@ class User extends Authenticatable
 
         return Tweet::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
-            ->latest()->paginate(7);
+            ->withLikes()->latest()->paginate(7);
     }
 
     public function tweets()

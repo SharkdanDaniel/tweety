@@ -41,5 +41,7 @@
             {{ $slot }}
         </section>
     </div>
+
+    <script src="http://unkpg.com/turbolinks"></script>
 </body>
 </html>
