@@ -4,19 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Tweet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TweetLikesController extends Controller
 {
+    /**
+     *
+     */
     public function store(Tweet $tweet)
     {
-        $tweet->like(current_user());
+        if($tweet->isLikedBy(current_user())) {
+            $tweet->unlike(current_user());
+        } else {
+            $tweet->like(current_user());
+        }
 
         return back();
     }
 
     public function destroy(Tweet $tweet)
     {
-        $tweet->dislike(current_user());
+        if($tweet->isDislikedBy(current_user())) {
+            $tweet->unlike(current_user());
+        } else {
+            $tweet->dislike(current_user());
+        }
 
         return back();
     }

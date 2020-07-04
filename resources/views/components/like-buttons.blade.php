@@ -5,7 +5,7 @@
             <button class="text-xs text-blue-400 flex">
                 <img
                     class=""
-                    src="{{ asset('images/like.png') }}"
+                    src="{{ asset($tweet->isLikedBy(current_user()) ? 'images/liked.png' : 'images/like.png')}}"
                     alt="likes"
                     width="15">
 
@@ -22,7 +22,7 @@
         <div class="flex items-center mr-4">
             <button class="text-xs text-red-400 flex">
                 <img
-                    src="{{ asset('images/dislike.png') }}"
+                    src="{{ asset($tweet->isDislikedBy(current_user()) ? 'images/disliked.png' : 'images/dislike.png')}}"
                     alt="dislikes"
                     width="15">
 

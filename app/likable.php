@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 trait likable
 {
@@ -27,6 +28,18 @@ trait likable
                 'liked' => $liked,
             ]
     );
+
+    }
+
+    /**
+     * Function that destroy the like
+     * @param User $user current user
+     */
+    public function unlike(User $user)
+    {
+        $user->likes()
+        ->where('tweet_id', $this->id)
+        ->delete();
     }
 
     public function dislike($user = null)
@@ -36,7 +49,8 @@ trait likable
 
     public function isLikedBy(User $user)
     {
-        return (bool) $user->likes
+
+        return (bool) $user->likes()
         ->where('tweet_id', $this->id)
         ->where('liked', true)
         ->count();

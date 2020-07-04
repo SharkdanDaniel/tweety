@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable, Followable;
+    use Notifiable, Followable, likable;
 
     /**
      * The attributes that are mass assignable.
@@ -65,4 +65,5 @@ class User extends Authenticatable
 
         return $append ? "{$path}/{$append}" : $path;
     }
+
 }

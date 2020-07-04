@@ -1,14 +1,28 @@
 <x-app>
     <header class="mb-6 relative">
         <div class="relative">
-            <img
-                src="/images/background.jpg"
-                alt="background profile"
-                width="700"
-                class="mb-2 rounded-lg"
-            >
-
             <a onclick="in" href="">
+                <img
+                    src="/images/background.jpg"
+                    alt="background profile"
+                    width="700"
+                    class="mb-2 rounded-lg"
+                >
+            </a>
+
+
+                <a onclick="in" href="{{ $user->path('avatar') }}">
+                    <img
+                        src="{{ $user->avatar }}"
+                        alt=""
+                        class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+                        style="left: 50%"
+                        width="150"
+                    >
+                </a>
+
+
+            @unless (auth()->user()->is($user))
                 <img
                     src="{{ $user->avatar }}"
                     alt=""
@@ -16,7 +30,8 @@
                     style="left: 50%"
                     width="150"
                 >
-            </a>
+            @endunless
+
         </div>
 
         <div class="flex justify-between items-center mb-6">

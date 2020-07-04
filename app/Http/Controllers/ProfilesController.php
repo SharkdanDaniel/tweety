@@ -21,6 +21,30 @@ class ProfilesController extends Controller
         return view('profiles.edit', compact('user'));
     }
 
+    public function avatar(User $user)
+    {
+        return view('profiles.avatar', compact('user'));
+    }
+
+    public function updateAvatar(User $user)
+    {
+        $attributes = request()->validate([
+            'avatar' => ['file']
+        ]);
+
+        if(request('avatar')) {
+
+            $attributes['avatar'] = request('avatar')->store('avatars');
+
+        }
+
+
+
+        $user->update($attributes);
+
+        return redirect($user->path());
+    }
+
     public function update(User $user)
     {
         $attributes = request()->validate([
