@@ -10,7 +10,7 @@
                 >
             </a>
 
-
+            @can ('edit', $user)
                 <a onclick="in" href="{{ $user->path('avatar') }}">
                     <img
                         src="{{ $user->avatar }}"
@@ -20,6 +20,7 @@
                         width="150"
                     >
                 </a>
+            @endcan
 
 
             @unless (auth()->user()->is($user))

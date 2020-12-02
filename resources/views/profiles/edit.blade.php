@@ -1,4 +1,6 @@
 <x-app>
+    <div class="bg-gray-200 rounded-lg py-4 px-6">
+
     <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -12,7 +14,7 @@
             </label>
 
             <input
-                class="border border-gray-400 p-2 w-full"
+                class="rounded border border-gray-400 p-2 w-full"
                 type="text"
                 name="name"
                 id="name"
@@ -34,7 +36,7 @@
             </label>
 
             <input
-                class="border border-gray-400 p-2 w-full"
+                class="rounded border border-gray-400 p-2 w-full"
                 type="text"
                 name="username"
                 id="username"
@@ -56,7 +58,7 @@
             </label>
 
             <input
-                class="border border-gray-400 p-2 w-full"
+                class="rounded border border-gray-400 p-2 w-full"
                 type="email"
                 name="email"
                 id="email"
@@ -78,7 +80,7 @@
             </label>
 
             <input
-                class="border border-gray-400 p-2 w-full"
+                class="rounded border border-gray-400 p-2 w-full"
                 type="password"
                 name="password"
                 id="password"
@@ -99,7 +101,7 @@
             </label>
 
             <input
-                class="border border-gray-400 p-2 w-full"
+                class="rounded border border-gray-400 p-2 w-full"
                 type="password"
                 name="password_confirmation"
                 id="password_confirmation"
@@ -121,6 +123,7 @@
 
             <a href="{{ $user->path()}}" class="bg-gray-200 rounded py-2 px-4 hover:bg-gray-400 mr-4">Cancel</a>
         </div>
+    </div>
 
     </form>
 </x-app>

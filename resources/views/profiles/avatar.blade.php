@@ -1,4 +1,5 @@
 <x-app>
+    <div class="bg-gray-200 rounded-lg py-4 px-6">
     <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -64,4 +65,5 @@
         </div>
 
     </form>
+    </div>
 </x-app>

@@ -1,9 +1,9 @@
 <x-master>
     <div class="container mx-auto flex justify-center">
-        <div class="px-12 py-8 bg-gray-200 border border-gray-400 rounded-lg">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="font-bold text-lg mb-4">{{ __('Register') }}</div>
+        <div class="px-12 py-8 bg-gray-200 border border-gray-400 rounded-lg w-50">
+            <div class="w-100">
+                <div class="w-100">
+                    <div class="font-bold text-lg mb-4 ml-3">{{ __('Register') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
@@ -36,7 +36,7 @@
                             <div class="mb-6">
                                 <label
                                     for="name"
-                                    class="col-md-4 col-form-label text-md-right"
+                                    class="block mb-2 uppercase font-bold text-xs text-gray-700"
                                 >
                                     Name
                                 </label>
@@ -60,7 +60,7 @@
                             <div class="mb-6">
                                 <label
                                     for="email"
-                                    class="col-md-4 col-form-label text-md-right"
+                                    class="block mb-2 uppercase font-bold text-xs text-gray-700"
                                 >
                                     Email
                                 </label>
@@ -84,7 +84,7 @@
                             <div class="mb-6">
                                 <label
                                     for="password"
-                                    class="col-md-4 col-form-label text-md-right"
+                                    class="block mb-2 uppercase font-bold text-xs text-gray-700"
                                 >
                                     password
                                 </label>
@@ -113,23 +113,22 @@
                                     Confirme Password
                                 </label>
 
-                                <div class="col-md-6">
                                     <input
                                         id="password-confirm"
                                         type="password"
                                         class="border border-gray-400 p-2 w-full"
                                         name="password_confirmation"
                                         required
-                                        autocomplete="new-password">
-                                </div>
+                                        autocomplete="new-password"
+                                    >
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="px-6 py-3 rounded text-sm uppercase bg-blue-600 text-white">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
+                            <div class="form-group row mb-0 px-3">
+
+                                <button type="submit" class="px-6 py-3 rounded-full text-sm uppercase bg-blue-600 text-white col-12">
+                                    {{ __('Register') }}
+                                </button>
+
                             </div>
                         </form>
                     </div>

@@ -1,5 +1,5 @@
 <x-app>
-    <div>
+    <div class="bg-gray-200 rounded-lg py-4 px-6">
         @foreach ($users as $user)
             <a href="{{ $user->path() }}" class="flex items-center mb-5">
                 <img

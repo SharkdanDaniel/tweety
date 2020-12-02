@@ -1,9 +1,9 @@
 <x-master>
     <div class="container mx-auto flex justify-center">
-        <div class="px-12 py-8 bg-gray-200 border border-gray-400 rounded-lg">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="font-bold text-lg mb-4">{{ __('Login') }}</div>
+        <div class="px-12 py-8 bg-gray-200 border border-gray-400 rounded-lg w-50">
+            <div class="">
+                <div class="">
+                    <div class="font-bold text-lg mb-4 ml-3">{{ __('Login') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -71,20 +71,25 @@
                                     </label>
                                 </div>
 
-                                @error('remember')
-                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                                @enderror
+                                <div class="flex justify-content-between">
+                                    @error('remember')
+                                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                    @enderror
+
+                                    <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot your password?</a>
+                                </div>
+
                             </div>
 
                             <div>
                                 <button
                                     type="submit"
-                                    class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-2"
+                                    class="bg-blue-400 text-white rounded-full py-2 px-4 hover:bg-blue-500 mr-2 w-100"
                                 >
                                     Submit
                                 </button>
 
-                                <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot your password?</a>
+
                             </div>
                         </form>
                     </div>
